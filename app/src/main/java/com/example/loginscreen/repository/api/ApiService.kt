@@ -10,6 +10,6 @@ import retrofit2.http.Query
 interface ApiService {
     @POST("login")
     fun postUser(@Query("phone_code") phone_code: String,
-    @Query(" phone_number")  phone_number: String,
+    @Query("phone_number")  phone_number: String,
     @Query("password") password: String): Single<Response<UserSign>>
 }
