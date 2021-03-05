@@ -17,15 +17,14 @@ class ApiModule {
 
     @Provides
     @ApiScope
-    @Named("ApiLaRestoR")
-    fun provideRetrofit( @Named("ApiLaResto")builder: Retrofit.Builder): Retrofit {
+    fun provideRetrofit( builder: Retrofit.Builder): Retrofit {
         return builder.baseUrl(API_URL).build()
     }
 
     @Provides
     @ApiScope
     @Inject
-    fun provideApiService(@Named("ApiLaRestoR")retrofit: Retrofit): ApiService{
+    fun provideApiService(retrofit: Retrofit): ApiService{
         return retrofit.create<ApiService>(ApiService::class.java!!)
     }
     @Provides

@@ -9,7 +9,6 @@ import com.kalashnyk.denys.kotlinsample.presentation.widget.SingleLiveEvent
 
 class UserViewModel(application: Application, private val mRepository: AppRepository) :
     BaseViewModel(application) {
-    var status: Boolean = true
     private val liveDataItem = SingleLiveEvent<UserSign>()
     fun getLiveDataItem(): LiveData<UserSign> {
         return liveDataItem

@@ -1,6 +1,6 @@
 package com.example.loginscreen.di.module
 
-import androidx.databinding.library.BuildConfig
+import com.example.loginscreen.BuildConfig
 import com.example.loginscreen.di.scope.ApiScope
 import dagger.Module
 import dagger.Provides
@@ -17,7 +17,6 @@ import javax.inject.Named
 class RetrofitModule {
     @Provides
     @ApiScope
-    @Named("ApiLaResto")
     fun provideRetrofitBuilder(): Retrofit.Builder{
         val builder = OkHttpClient.Builder()
             .connectionPool(ConnectionPool(5, 30, TimeUnit.SECONDS))
