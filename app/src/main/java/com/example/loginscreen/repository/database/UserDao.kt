@@ -2,16 +2,16 @@ package com.example.loginscreen.repository.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.loginscreen.repository.database.entity.UserSign
+import com.example.loginscreen.repository.database.entity.User
 
 @Dao
 interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun addUserSignUpOption(userSign: UserSign)
+    fun addUserSignUpOption(userSign: User)
 
     @Update
-    fun update(userSign: UserSign)
+    fun update(userSign: User)
 
     @Query("SELECT * FROM user")
-    fun getUser(): LiveData<UserSign>
+    fun getUser(): User
 }

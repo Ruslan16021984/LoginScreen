@@ -1,6 +1,7 @@
 package com.example.loginscreen
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -24,11 +25,10 @@ class ProfileFragment : Fragment() {
         val tvSurname = view.tvSurname
         val tvName = view.tvName
         val tvPhoneNumber = view.etPhoneNumber
-        (activity as MainActivity).userViewModel?.getUser()?.observe(requireActivity(), Observer {
-            tvSurname.setText(it.surname)
-            tvName.setText(it.name)
-            tvPhoneNumber.setText(it.phone)
-        })
+       var user = (activity as MainActivity).userViewModel?.getUse()
+        tvSurname.setText(user?.secondName)
+        tvName.setText(user?.name)
+        tvPhoneNumber.setText(user?.phoneNumber)
         return view
     }
 }

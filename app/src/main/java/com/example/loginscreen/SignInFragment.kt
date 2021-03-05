@@ -36,18 +36,19 @@ class SignInFragment : Fragment() {
             )
 
         }
+        (activity as MainActivity).userViewModel?.getLiveDataItem()?.observe(requireActivity(), Observer{
+            Log.e("Observer", " --------${it.userId}")
+            if (it.userId.isNotEmpty()){
+                findNavController().navigate(R.id.action_signInFragment_to_profileFragment)
+            }
+        })
         return view
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         ccp.registerCarrierNumberEditText(etPhoneNumber)
-        (activity as MainActivity).userViewModel?.getLiveDataItem()?.observe(requireActivity(), Observer{
-            Log.e("onActivityCreated", " --------${it.userId}")
-            if (it.userId.isNotEmpty()){
-                findNavController().navigate(R.id.action_signInFragment_to_profileFragment)
-            }
-        })
+
 //        ccp.fullNumber
 
     }
