@@ -1,7 +1,6 @@
 package com.example.loginscreen
 
 import android.app.Application
-import android.util.Log
 import androidx.room.Room
 import com.example.loginscreen.di.component.*
 import com.example.loginscreen.di.module.ApiModule

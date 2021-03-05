@@ -1,7 +1,6 @@
 package com.example.loginscreen.domain
 
 import android.app.Application
-import android.content.Context
 import android.util.Log
 import androidx.lifecycle.LiveData
 import com.example.loginscreen.repository.AppRepository
