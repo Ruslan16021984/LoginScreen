@@ -15,7 +15,6 @@ import kotlinx.android.synthetic.main.fragment_sign_in.view.*
 
 class SignInFragment : Fragment() {
     private lateinit var mActivity: MainActivity
-    private lateinit var countryCodePicker: CountryCodePicker
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,7 +36,7 @@ class SignInFragment : Fragment() {
 
         }
         (activity as MainActivity).userViewModel?.getLiveDataItem()?.observe(requireActivity(), Observer{
-            Log.e("Observer", " --------${it.userId}")
+            Log.e("Observer", " --------${it}")
             if (it.userId.isNotEmpty()){
                 findNavController().navigate(R.id.action_signInFragment_to_profileFragment)
             }

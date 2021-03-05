@@ -26,6 +26,7 @@ class ProfileFragment : Fragment() {
         val tvName = view.tvName
         val tvPhoneNumber = view.etPhoneNumber
        var user = (activity as MainActivity).userViewModel?.getUse()
+        Log.e("User_Prof", "${user.toString()}")
         tvSurname.setText(user?.secondName)
         tvName.setText(user?.name)
         tvPhoneNumber.setText(user?.phoneNumber)
