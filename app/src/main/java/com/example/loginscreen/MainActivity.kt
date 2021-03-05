@@ -16,7 +16,6 @@ class MainActivity : BaseActivity() {
     }
 
     override fun injectDependency(component: ViewModelComponent) {
-        Log.e("injectDependency", "ViewModelComponent")
         component.inject(this)
     }
 }

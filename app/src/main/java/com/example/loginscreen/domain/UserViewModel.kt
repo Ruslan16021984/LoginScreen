@@ -21,10 +21,8 @@ class UserViewModel(application: Application, private val mRepository: AppReposi
         password: String
     ) {
         mRepository.postUserToServer(code, number, password).subscribe({
-            Log.e("postUserToServer", " --------${it}")
-
-                Log.e("isSuccessful", " --------${it}")
-                val user = it.user?.let { it1 -> User(it1.userId, it.user?.secondName, it.user?.name, it.user?.phoneNumber) }
+val fullNumber = " $code${ it.user?.phoneNumber }"
+                val user = it.user?.let { it1 -> User(it1.userId, it.user?.secondName, it.user?.name, fullNumber) }
             if (user != null) {
                mRepository.addUser(user)
               liveDataItem.value =  mRepository.getUserFromDb()
