@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
+    android:label="Sign In"
     app:startDestination="@id/signInFragment">
 
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.example.loginscreen.SignInFragment"
-        android:label="fragment_sign_in"
-        tools:layout="@layout/fragment_sign_in" >
+        android:label="Sign In"
+        tools:layout="@layout/fragment_sign_in">
         <action
             android:id="@+id/action_signInFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
@@ -17,6 +18,6 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.loginscreen.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="Profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>
