@@ -25,7 +25,7 @@ class SignInFragment : Fragment() {
         val tvPassword = view.tvPassword
         btnSingIn.setOnClickListener {
             val code = ccp.selectedCountryCodeWithPlus
-           (activity as MainActivity).userViewModel?.postUser2(
+           (activity as MainActivity).userViewModel?.postUser(
                 code,
                 tvName.text.toString().trim().replace(" ", ""),
                 tvPassword.text.toString()

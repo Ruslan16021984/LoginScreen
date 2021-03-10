@@ -10,9 +10,6 @@ import kotlinx.android.synthetic.main.fragment_profile.view.*
 class ProfileFragment : Fragment() {
     private lateinit var mActivity: MainActivity
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,10 +20,14 @@ class ProfileFragment : Fragment() {
         val tvSurname = view.tvSurname
         val tvName = view.tvName
         val tvPhoneNumber = view.etPhoneNumber
-       var user = (activity as MainActivity).userViewModel?.getUse()
-        tvSurname.setText(user?.secondName)
-        tvName.setText(user?.name)
-        tvPhoneNumber.setText(user?.phoneNumber)
+       (activity as MainActivity).userViewModel?.getUse()?.subscribe ({
+           tvSurname.setText(it?.secondName)
+           tvName.setText(it?.name)
+           tvPhoneNumber.setText(it?.phoneNumber)
+       },{
+
+       })
+
         return view
     }
 }

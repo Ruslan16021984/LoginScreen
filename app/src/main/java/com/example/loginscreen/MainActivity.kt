@@ -1,13 +1,10 @@
 package com.example.loginscreen
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import com.example.loginscreen.di.component.ViewModelComponent
 import com.example.loginscreen.domain.UserViewModel
-import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 class MainActivity : BaseActivity() {
