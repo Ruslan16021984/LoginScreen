@@ -1,5 +1,5 @@
-package com.kalashnyk.denys.kotlinsample.presentation.widget
 
+package com.example.loginscreen.widget
 import android.util.Log
 import androidx.annotation.MainThread
 import androidx.lifecycle.LifecycleOwner

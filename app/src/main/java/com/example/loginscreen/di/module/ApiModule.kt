@@ -23,7 +23,6 @@ class ApiModule {
 
     @Provides
     @ApiScope
-    @Inject
     fun provideApiService(retrofit: Retrofit): ApiService{
         return retrofit.create<ApiService>(ApiService::class.java!!)
     }
