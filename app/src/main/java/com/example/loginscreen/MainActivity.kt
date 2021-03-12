@@ -3,12 +3,8 @@ package com.example.loginscreen
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.Navigation
-import com.example.loginscreen.domain.UserViewModel
-import javax.inject.Inject
 
 class MainActivity : BaseActivity() {
-    var userViewModel: UserViewModel? = null
-        @Inject set
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,7 +13,7 @@ class MainActivity : BaseActivity() {
         setSupportActionBar(toolbar)
         val navController = Navigation.findNavController(this, R.id.nav_host_fragment_container)
         navController.addOnDestinationChangedListener {
-                controller, destination, arguments ->
+                _, _, _ ->
             toolbar.title = navController.currentDestination?.label
         }
     }
