@@ -2,12 +2,10 @@ package com.example.loginscreen.repository.api
 
 import android.util.Log
 import com.example.loginscreen.repository.database.entity.Status
-import com.example.loginscreen.repository.database.entity.User
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.core.Single
-import io.reactivex.rxjava3.core.SingleTransformer
-import io.reactivex.rxjava3.schedulers.Schedulers
-import retrofit2.Response
+import io.reactivex.Single
+import io.reactivex.SingleTransformer
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
 
 class ServerCommunicator(private val mService: ApiService) {
@@ -24,7 +22,7 @@ class ServerCommunicator(private val mService: ApiService) {
             .timeout(DEFAULT_TIMEOUT.toLong(), TimeUnit.SECONDS)
             .retry(DEFAULT_RETRY_ATTEMPTS)
     }
-    fun postUserSignIn2(code: String, number: String, password: String): Single<Status>{
+    fun postUserSignIn2(code: String, number: String, password: String): Single<Status> {
         return mService.postUser(code, number, password).compose(singleTransformer())
             .doOnError { t: Throwable -> Log.d("ServerCommunicator", t.message.toString()) }
     }

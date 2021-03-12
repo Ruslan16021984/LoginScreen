@@ -3,7 +3,6 @@ package com.example.loginscreen
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.Navigation
-import com.example.loginscreen.di.component.ViewModelComponent
 import com.example.loginscreen.domain.UserViewModel
 import javax.inject.Inject
 
@@ -23,7 +22,4 @@ class MainActivity : BaseActivity() {
         }
     }
 
-    override fun injectDependency(component: ViewModelComponent) {
-        component.inject(this)
-    }
 }

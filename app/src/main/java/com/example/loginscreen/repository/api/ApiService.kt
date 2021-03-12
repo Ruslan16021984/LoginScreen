@@ -1,7 +1,7 @@
 package com.example.loginscreen.repository.api
 
 import com.example.loginscreen.repository.database.entity.Status
-import io.reactivex.rxjava3.core.Single
+import io.reactivex.Single
 import retrofit2.http.POST
 import retrofit2.http.Query
 
